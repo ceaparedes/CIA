@@ -27,6 +27,7 @@ public class Main {
        //Inicializacion busqueda. 
         Busqueda actual1;
         actual1 = new Busqueda(inicio,fin,labMain);
+        actual1.iniciarBusqueda();
         actual1.mostrarSolucion(fin);
         
     }

@@ -15,6 +15,7 @@ public class Busqueda {
         this.labBusqueda = labBusqueda;  
         this.abierto= new ArrayList<>();
         this.cerrado = new ArrayList<>();
+       
     }
 
   
@@ -23,6 +24,7 @@ public class Busqueda {
         ArrayList <String> resultado;
         abierto.add(actual);
         int i=0;
+        
        
      
         while(!abierto.isEmpty() && !termino){
