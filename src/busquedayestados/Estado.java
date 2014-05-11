@@ -21,7 +21,7 @@ public class Estado {
         labe= lab.construir();
         if (posicion.x-1>=0){
             System.out.println(""+posicion.x);
-        if ("-".equals(labe[posicion.x-1][posicion.y])){
+        if ((labe[posicion.x-1][posicion.y])== "-"){
             return true;
         }
         }
@@ -31,7 +31,7 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.x+1<7){
-        if ("-".equals(labe[posicion.x+1][posicion.y])){
+        if ((labe[posicion.x+1][posicion.y]) == "-"){
             return true;
         }
         }
@@ -41,7 +41,7 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.y-1>=0){
-        if ("-".equals(labe[posicion.x][posicion.y-1])){
+        if ((labe[posicion.x][posicion.y-1])== "-"){
           
             
             return true;
@@ -54,7 +54,7 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.y+1<5){
-        if ("-".equals(labe[posicion.x][posicion.y+1])){    
+        if ((labe[posicion.x][posicion.y+1])== "-"){    
             return true;
         }
         }
