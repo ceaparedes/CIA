@@ -13,6 +13,8 @@ public class Busqueda {
         this.actual = actual;
         this.meta= meta;
         this.labBusqueda = labBusqueda;  
+        this.abierto= new ArrayList<>();
+        this.cerrado = new ArrayList<>();
     }
 
   
