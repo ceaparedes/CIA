@@ -36,7 +36,7 @@ public class Busqueda {
             
             if(actual.getPosicion().equals(meta.getPosicion())){
                 meta=actual;
-                mostrarSolucion(actual);
+                mostrarSolucion(meta);
                 termino=true;
                 System.out.println("pasa por el equals");
             }
@@ -62,6 +62,7 @@ public class Busqueda {
         if(actual.moverArriba()){
          position = actual.getPosicion();
          position.x -=1;
+            System.out.println("Despues de Mover Arriba " +position);
          nuevo = new Estado(position,actual,"se ha movido hacia Arriba",labBusqueda); 
          System.out.println(""+ nuevo.getMovimiento());
          abierto.add(nuevo);
