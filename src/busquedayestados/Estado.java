@@ -20,8 +20,9 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.x-1>=0){
+            System.out.println(labe[posicion.x][posicion.y]);
             System.out.println(""+posicion.x);
-            System.out.println(labe[posicion.x-1][posicion.y]);
+            
         if ((labe[posicion.x-1][posicion.y])== "-"){
             return true;
         }

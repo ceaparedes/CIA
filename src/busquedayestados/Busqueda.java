@@ -64,7 +64,7 @@ public class Busqueda {
         if(actual.moverArriba()){
          position = actual.getPosicion();
          position.x -=1;
-            System.out.println("Despues de Mover Arriba " +position);
+         System.out.println("Despues de Mover Arriba " +position);
          nuevo = new Estado(position,actual,"se ha movido hacia Arriba",labBusqueda); 
          System.out.println(""+ nuevo.getMovimiento());
          abierto.add(nuevo);
