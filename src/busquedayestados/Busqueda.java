@@ -29,7 +29,7 @@ public class Busqueda {
             actual= abierto.get(0);
               if (!cerrado.contains(actual)){
                 cerrado.add(actual);
-                expandir (actual, labBusqueda);
+                expandir (actual);
             }
             System.out.println("Actual: "+actual.toString());
             if(actual.getPosicion().equals(meta.getPosicion())){
@@ -52,13 +52,13 @@ public class Busqueda {
         return resultado;
     }
     
-    public void expandir(Estado actual, Laberinto labBusqueda){
+    public void expandir(Estado actual){
          Casilla position;
          Estado nuevo;
 
         if(actual.moverArriba()){
          position = actual.getPosicion();
-         position.x =-1;
+         position.x -=1;
          nuevo = new Estado(position,actual,"se ha movido hacia Arriba",labBusqueda); 
          System.out.println(""+ nuevo.getMovimiento());
          
@@ -68,21 +68,21 @@ public class Busqueda {
         
         if(actual.moverAbajo()){
          position = actual.getPosicion();
-         position.x=+1;
+         position.x+=1;
          nuevo = new Estado(position,actual,"se ha movido hacia Abajo",labBusqueda);
          actual= abierto.remove(0);
         }
         
         if(actual.moverIzquierda()){
          position = actual.getPosicion();
-         position.y =-1;
+         position.y -=1;
          nuevo = new Estado(position,actual,"se ha movido hacia la Izquierda",labBusqueda);
       
         }
         
         if(actual.moverDerecha()){
          position = actual.getPosicion();
-         position.y =+1;
+         position.y +=1;
          nuevo = new Estado(position,actual,"se ha movido hacia la derecha",labBusqueda);
     
         }
