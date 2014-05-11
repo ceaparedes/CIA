@@ -21,23 +21,24 @@ public class Busqueda {
     public ArrayList iniciarBusqueda(){
         boolean termino = false;
         ArrayList <String> resultado;
-        
         abierto.add(actual);
-        System.out.println(""+actual);
-        System.out.println("Posición actual = "+abierto.get(0).getPosicion());
+        int i=0;
+       
      
         while(!abierto.isEmpty() && !termino){
-            abierto.add(actual);
+            i++;
+            
             actual= abierto.get(0);
               if (!cerrado.contains(actual)){
                 cerrado.add(actual);
                 expandir (actual);
             }
-            System.out.println("Actual: "+actual.toString());
+            
             if(actual.getPosicion().equals(meta.getPosicion())){
-                actual=meta;
+                meta=actual;
                 mostrarSolucion(actual);
                 termino=true;
+                System.out.println("pasa por el equals");
             }
             abierto.remove(0);
          }
@@ -63,7 +64,7 @@ public class Busqueda {
          position.x -=1;
          nuevo = new Estado(position,actual,"se ha movido hacia Arriba",labBusqueda); 
          System.out.println(""+ nuevo.getMovimiento());
-         
+         abierto.add(nuevo);
          
         }
         
@@ -72,21 +73,21 @@ public class Busqueda {
          position = actual.getPosicion();
          position.x+=1;
          nuevo = new Estado(position,actual,"se ha movido hacia Abajo",labBusqueda);
-         actual= abierto.remove(0);
+         abierto.add(nuevo);
         }
         
         if(actual.moverIzquierda()){
          position = actual.getPosicion();
          position.y -=1;
          nuevo = new Estado(position,actual,"se ha movido hacia la Izquierda",labBusqueda);
-      
+         abierto.add(nuevo);
         }
         
         if(actual.moverDerecha()){
          position = actual.getPosicion();
          position.y +=1;
          nuevo = new Estado(position,actual,"se ha movido hacia la derecha",labBusqueda);
-    
+         abierto.add(nuevo);
         }
     }      
     
