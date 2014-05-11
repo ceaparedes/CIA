@@ -21,6 +21,7 @@ public class Estado {
         labe= lab.construir();
         if (posicion.x-1>=0){
             System.out.println(""+posicion.x);
+            System.out.println(labe[posicion.x-1][posicion.y]);
         if ((labe[posicion.x-1][posicion.y])== "-"){
             return true;
         }

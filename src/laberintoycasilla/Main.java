@@ -16,6 +16,7 @@ public class Main {
         //Desclaración del laberinto
         Laberinto labMain;
         labMain = new Laberinto();
+        labMain.printLaberinto();
         
         
         //Declaración e inicializacion del Estado Incial y Final
