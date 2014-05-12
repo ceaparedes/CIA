@@ -55,6 +55,7 @@ public class Busqueda {
         return resultado;
     }
     
+    
     public void expandir(Estado actual){
          Casilla position;
          Estado nuevo;

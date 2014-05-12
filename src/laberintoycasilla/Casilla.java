@@ -27,9 +27,9 @@ public class Casilla {
     }
     
     @Override
-		    public boolean equals(Object obj) {
-		        if(!(obj instanceof Casilla)) return false;
-		        return ((Casilla)obj).getX() == this.getX() &&
-		                ((Casilla)obj).getY() == this.getY();
-		    }
+    public boolean equals(Object obj) {
+    if(!(obj instanceof Casilla)) return false;
+    return ((Casilla)obj).getX() == this.getX() &&
+    ((Casilla)obj).getY() == this.getY();
+    }
 }
