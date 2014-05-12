@@ -24,25 +24,23 @@ public class Busqueda {
         ArrayList <String> resultado;
         abierto.add(actual);
         int i=0;
-        
-       
-     
+                  
         while(!abierto.isEmpty() && !termino){
             i++;
-            
             actual= abierto.get(0);
               if (!cerrado.contains(actual)){
                 cerrado.add(actual);
                 expandir (actual);
-            }
-            
-            if(actual.getPosicion().equals(meta.getPosicion())){
-                meta=actual;
-                mostrarSolucion(meta);
-                termino=true;
-                System.out.println("pasa por el equals");
+                if(actual.equals(meta)){
+                    meta=actual;
+                    mostrarSolucion(meta);
+                    termino=true;
+                    System.out.println("pasa por el equals");
             }
             abierto.remove(0);
+            }
+            
+            
          }
         if(!termino) return null;
         
@@ -90,6 +88,7 @@ public class Busqueda {
          position = actual.getPosicion();
          position.y +=1;
          nuevo = new Estado(position,actual,"se ha movido hacia la derecha",labBusqueda);
+         System.out.println("Despues de Mover Derecha " +(position.x)+ "," + (position.y));
          abierto.add(nuevo);
         }
     }      
@@ -118,4 +117,6 @@ public class Busqueda {
         
  
     
+    
+
     
