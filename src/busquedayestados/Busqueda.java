@@ -31,11 +31,13 @@ public class Busqueda {
               if (!cerrado.contains(actual)){
                 cerrado.add(actual);
                 expandir (actual);
-                if(actual.equals(meta)){
+                System.out.println("pasa por aca");
+                if(actual.getPosicion().equals(meta.getPosicion())){
+                    System.out.println("pasa por el equals");
                     meta=actual;
                     mostrarSolucion(meta);
                     termino=true;
-                    System.out.println("pasa por el equals");
+                    
             }
             abierto.remove(0);
             }
@@ -54,7 +56,10 @@ public class Busqueda {
         }
         return resultado;
     }
-    
+   /* public Casilla getPosicion() {
+        Casilla position = new Casilla(position.getX(),position.getY());
+        return position;
+    }*/
     
     public void expandir(Estado actual){
          Casilla position;

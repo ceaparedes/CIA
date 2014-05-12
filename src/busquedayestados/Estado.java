@@ -20,7 +20,7 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.x-1>=0){
-        if ("-".equals(labe[posicion.x-1][posicion.y])){
+        if ((labe[posicion.x-1][posicion.y])=="-"){
             System.out.println("Se Puede Mover Hacia Arriba");
             return true;
         }
@@ -31,7 +31,7 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.x+1<7){
-        if ("-".equals(labe[posicion.x+1][posicion.y])){
+        if ((labe[posicion.x+1][posicion.y])=="-"){
             System.out.println("se movio hacia abajo");
             return true;
         }
@@ -42,7 +42,7 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.y-1>=0){
-        if ("-".equals(labe[posicion.x][posicion.y-1])){
+        if ((labe[posicion.x][posicion.y-1])=="-"){
             System.out.println("se movio hacia la izquierda");
           
             
@@ -56,7 +56,7 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.y+1<5){
-        if ("-".equals(labe[posicion.x][posicion.y+1])){   
+        if ((labe[posicion.x][posicion.y+1])=="-"){   
             System.out.println("se movio a la derecha");
             return true;
         }
@@ -72,11 +72,11 @@ public class Estado {
     }
 
     @Override
-        public boolean equals(Object obj) {
-        if(!(obj instanceof Estado)) return false;
-        return ((Estado)obj).getPosicion() == this.getPosicion();
-		    }
-
+      public boolean equals(Object obj){
+        if(!(obj instanceof Estado))return false;
+        return ((Estado)obj).getPosicion().equals(this.getPosicion());
+    }
+      
     @Override
     public String toString() {
         return "Estado{" + "posicion=" + posicion + '}';
