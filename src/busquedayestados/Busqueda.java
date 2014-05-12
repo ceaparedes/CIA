@@ -23,10 +23,10 @@ public class Busqueda {
         boolean termino = false;
         ArrayList <String> resultado;
         abierto.add(actual);
-        int i=0;
+        
                   
         while(!abierto.isEmpty() && !termino){
-            i++;
+           
             actual= abierto.get(0);
               if (!cerrado.contains(actual)){
                 cerrado.add(actual);
@@ -62,7 +62,7 @@ public class Busqueda {
         if(actual.moverArriba()){
          position = actual.getPosicion();
          position.x -=1;
-         System.out.println("Despues de Mover Arriba " +position);
+         System.out.println("Despues de Mover Arriba " +(position.x) +"-"+ (position.y));
          nuevo = new Estado(position,actual,"se ha movido hacia Arriba",labBusqueda); 
          System.out.println(""+ nuevo.getMovimiento());
          abierto.add(nuevo);

@@ -72,9 +72,9 @@ public class Estado {
     }
 
     @Override
-   		    public boolean equals(Object obj) {
-		        if(!(obj instanceof Estado)) return false;
-		        return ((Estado)obj).getPosicion() == this.getPosicion();
+        public boolean equals(Object obj) {
+        if(!(obj instanceof Estado)) return false;
+        return ((Estado)obj).getPosicion() == this.getPosicion();
 		    }
 
     @Override
