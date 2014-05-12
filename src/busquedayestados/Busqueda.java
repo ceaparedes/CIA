@@ -2,18 +2,18 @@ package busquedayestados;
 
 import java.util.ArrayList;
 import laberintoycasilla.Casilla;
-import laberintoycasilla.Laberinto;
+
 
 public class Busqueda {
 
     private Estado actual, meta;
     private ArrayList<Estado> abierto, cerrado;
-    private Laberinto labBusqueda;
+   
 
-    public Busqueda(Estado actual, Estado meta, Laberinto labBusqueda) {
+    public Busqueda(Estado actual, Estado meta) {
         this.actual = actual;
         this.meta = meta;
-        this.labBusqueda = labBusqueda;
+        
         this.abierto = new ArrayList<>();
         this.cerrado = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class Busqueda {
             actual = abierto.get(0);
             if (!cerrado.contains(actual)) {
                 cerrado.add(actual);
-                expandir(actual, labBusqueda);
+                expandir(actual);
             }
             if (actual.getPosicion().equals(meta.getPosicion())) {
                 termino = true;
@@ -68,14 +68,14 @@ public class Busqueda {
         return resultado;
     }
 
-    public void expandir(Estado actual, Laberinto labBusqueda) {
+    public void expandir(Estado actual) {
         Casilla position;
         Estado nuevo;
 
         if (actual.moverArriba()) {
             position = actual.getPosicion();
             position.x -= 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia Arriba", labBusqueda);
+            nuevo = new Estado(position, actual, "se ha movido hacia Arriba");
             abierto.add(nuevo);
 
         }
@@ -83,7 +83,7 @@ public class Busqueda {
         if (actual.moverAbajo()) {
             position = actual.getPosicion();
             position.x += 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia Abajo", labBusqueda);
+            nuevo = new Estado(position, actual, "se ha movido hacia Abajo");
             abierto.add(nuevo);
 
         }
@@ -91,7 +91,7 @@ public class Busqueda {
         if (actual.moverIzquierda()) {
             position = actual.getPosicion();
             position.y -= 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia la Izquierda", labBusqueda);
+            nuevo = new Estado(position, actual, "se ha movido hacia la Izquierda");
             abierto.add(nuevo);
 
         }
@@ -99,7 +99,7 @@ public class Busqueda {
         if (actual.moverDerecha()) {
             position = actual.getPosicion();
             position.y += 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia la derecha", labBusqueda);
+            nuevo = new Estado(position, actual, "se ha movido hacia la derecha");
             abierto.add(nuevo);
 
         }

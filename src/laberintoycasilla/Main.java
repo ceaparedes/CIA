@@ -19,12 +19,12 @@ public class Main {
 
         //Declaración e inicializacion del Estado Incial y Final
         Estado inicio, fin;
-        inicio = new Estado(puntoInicial, null, null, labMain);
-        fin = new Estado(puntoFinal, null, null, labMain);
+        inicio = new Estado(puntoInicial, null, null);
+        fin = new Estado(puntoFinal, null, null);
 
         //Inicializacion busqueda. 
         Busqueda actual1;
-        actual1 = new Busqueda(inicio, fin, labMain);
+        actual1 = new Busqueda(inicio, fin);
         System.out.println(actual1.obtenerResultado());
 
     }

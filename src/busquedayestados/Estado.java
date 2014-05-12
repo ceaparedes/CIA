@@ -11,11 +11,11 @@ public class Estado {
     private String movimiento;
     private Laberinto lab;
 
-    public Estado(Casilla posicion, Estado antecesor, String movimiento, Laberinto lab) {
+    public Estado(Casilla posicion, Estado antecesor, String movimiento) {
         this.posicion = posicion;
         this.antecesor = antecesor;
         this.movimiento = movimiento;
-        this.lab = lab;
+        lab = new Laberinto();
     }
 
     public boolean moverArriba() {
