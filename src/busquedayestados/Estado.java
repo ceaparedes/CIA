@@ -20,10 +20,8 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.x-1>=0){
-            System.out.println(labe[posicion.x][posicion.y]);
-            System.out.println(""+posicion.x);
-            
-        if ((labe[posicion.x-1][posicion.y])== "-"){
+        if ("-".equals(labe[posicion.x-1][posicion.y])){
+            System.out.println("Se Puede Mover Hacia Arriba");
             return true;
         }
         }
@@ -33,7 +31,8 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.x+1<7){
-        if ((labe[posicion.x+1][posicion.y]) == "-"){
+        if ("-".equals(labe[posicion.x+1][posicion.y])){
+            System.out.println("se movio hacia abajo");
             return true;
         }
         }
@@ -43,7 +42,8 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.y-1>=0){
-        if ((labe[posicion.x][posicion.y-1])== "-"){
+        if ("-".equals(labe[posicion.x][posicion.y-1])){
+            System.out.println("se movio hacia la izquierda");
           
             
             return true;
@@ -56,7 +56,8 @@ public class Estado {
         String labe[][];
         labe= lab.construir();
         if (posicion.y+1<5){
-        if ((labe[posicion.x][posicion.y+1])== "-"){    
+        if ("-".equals(labe[posicion.x][posicion.y+1])){   
+            System.out.println("se movio a la derecha");
             return true;
         }
         }
@@ -71,19 +72,10 @@ public class Estado {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Estado other = (Estado) obj;
-        if (!Objects.equals(this.getPosicion(), other.getPosicion())) {
-            return false;
-        }
-        return true;
-    }
+   		    public boolean equals(Object obj) {
+		        if(!(obj instanceof Estado)) return false;
+		        return ((Estado)obj).getPosicion() == this.getPosicion();
+		    }
 
     @Override
     public String toString() {
