@@ -1,65 +1,65 @@
 package busquedayestados;
+
 import laberintoycasilla.Casilla;
 import laberintoycasilla.Laberinto;
 import java.util.Objects;
 
 public class Estado {
+
     private Casilla posicion;
     private Estado antecesor;
     private String movimiento;
     private Laberinto lab;
-    
-    public Estado(Casilla posicion, Estado antecesor, String movimiento, Laberinto lab){ 
-       this.posicion= posicion;
-       this.antecesor= antecesor;
-       this.movimiento = movimiento;
-       this.lab = lab;
-  
+
+    public Estado(Casilla posicion, Estado antecesor, String movimiento, Laberinto lab) {
+        this.posicion = posicion;
+        this.antecesor = antecesor;
+        this.movimiento = movimiento;
+        this.lab = lab;
     }
-    public boolean moverArriba(){
+
+    public boolean moverArriba() {
+
         String labe[][];
-        labe= lab.construir();
-        if (posicion.x-1>=0){
-        if ((labe[posicion.x-1][posicion.y])=="-"){
-            System.out.println("Se Puede Mover Hacia Arriba");
-            return true;
-        }
+        labe = lab.construir();
+        if ((posicion.x - 1) >= 0) {
+            if (labe[posicion.x - 1][posicion.y] == "") {
+                return true;
+            }
         }
         return false;
     }
-     public boolean moverAbajo(){
+
+    public boolean moverAbajo() {
         String labe[][];
-        labe= lab.construir();
-        if (posicion.x+1<7){
-        if ((labe[posicion.x+1][posicion.y])=="-"){
-            System.out.println("se movio hacia abajo");
-            return true;
-        }
+        labe = lab.construir();
+        if (posicion.x + 1 < 7) {
+            if (labe[posicion.x + 1][posicion.y] == "") {
+                return true;
+            }
         }
         return false;
     }
-      public boolean moverIzquierda(){
+
+    public boolean moverIzquierda() {
         String labe[][];
-        labe= lab.construir();
-        if (posicion.y-1>=0){
-        if ((labe[posicion.x][posicion.y-1])=="-"){
-            System.out.println("se movio hacia la izquierda");
-          
-            
-            return true;
-        }
+        labe = lab.construir();
+        if (posicion.y - 1 >= 0) {
+            if (labe[posicion.x][posicion.y - 1] == "") {
+
+                return true;
+            }
         }
         return false;
     }
-      
-       public boolean moverDerecha(){
+
+    public boolean moverDerecha() {
         String labe[][];
-        labe= lab.construir();
-        if (posicion.y+1<5){
-        if ((labe[posicion.x][posicion.y+1])=="-"){   
-            System.out.println("se movio a la derecha");
-            return true;
-        }
+        labe = lab.construir();
+        if (posicion.y + 1 < 5) {
+            if (labe[posicion.x][posicion.y + 1] == "") {
+                return true;
+            }
         }
         return false;
     }
@@ -72,17 +72,31 @@ public class Estado {
     }
 
     @Override
-      public boolean equals(Object obj){
-        if(!(obj instanceof Estado))return false;
-        return ((Estado)obj).getPosicion().equals(this.getPosicion());
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Estado other = (Estado) obj;
+        if (!Objects.equals(this.getPosicion1(), other.getPosicion1())) {
+            return false;
+        }
+        return true;
     }
-      
+
     @Override
     public String toString() {
-        return "Estado{" + "posicion=" + posicion + '}';
+        return "Estado{" + "posicion= (" + posicion.x + "),(" + posicion.y + ") }";
     }
 
     public Casilla getPosicion() {
+        Casilla position = new Casilla(posicion.x, posicion.y);
+        return position;
+    }
+
+    public Casilla getPosicion1() {
         return posicion;
     }
 
