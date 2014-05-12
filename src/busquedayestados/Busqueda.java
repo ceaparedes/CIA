@@ -106,24 +106,4 @@ public class Busqueda {
 
     }
 
-    /*  public void mostrarSolucion(Estado actual){
-        
-     Estado aux= actual;
-     System.out.println(aux);
-     ArrayList<String> mov = new ArrayList();
-            
-     while(aux !=null){
-     mov.add(aux.getMovimiento());
-     aux=aux.getAntecesor();
-     }
-        
-     mov.remove(0);
-     for(int i=0;i<mov.size();i++){
-     System.out.println("Movimiento"+(i+1)+"-"+mov.get(i));
-            
-     }
-        
-       
-        
-     }*/
 }
