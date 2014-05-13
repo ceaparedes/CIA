@@ -23,11 +23,9 @@ public class Busqueda {
         StringBuilder str;
         ArrayList<String> resultado = iniciarBusqueda();
         int tam;
-
         if (resultado == null) {
             return null;
         }
-
         str = new StringBuilder();
         tam = resultado.size();
 
@@ -75,7 +73,8 @@ public class Busqueda {
         if (actual.moverArriba()) {
             position = actual.getPosicion();
             position.x -= 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia Arriba");
+            nuevo = new Estado(position, actual, "Arriba");
+            
             abierto.add(nuevo);
 
         }
@@ -83,7 +82,7 @@ public class Busqueda {
         if (actual.moverAbajo()) {
             position = actual.getPosicion();
             position.x += 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia Abajo");
+            nuevo = new Estado(position, actual, "Abajo");
             abierto.add(nuevo);
 
         }
@@ -91,7 +90,7 @@ public class Busqueda {
         if (actual.moverIzquierda()) {
             position = actual.getPosicion();
             position.y -= 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia la Izquierda");
+            nuevo = new Estado(position, actual, "Izquierda");
             abierto.add(nuevo);
 
         }
@@ -99,11 +98,11 @@ public class Busqueda {
         if (actual.moverDerecha()) {
             position = actual.getPosicion();
             position.y += 1;
-            nuevo = new Estado(position, actual, "se ha movido hacia la derecha");
+            nuevo = new Estado(position, actual, "Derecha");
             abierto.add(nuevo);
 
         }
-
+        
     }
 
 }

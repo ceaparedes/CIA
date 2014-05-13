@@ -88,7 +88,8 @@ public class Estado {
 
     @Override
     public String toString() {
-        return  "se ha movido a la Posición= (" + posicion.x + "),(" + posicion.y + ") }";
+        return "se ha movido a la Posición= (" + posicion.x + "),(" + posicion.y + ") }" + movimiento ;
+        
     }
 
     public Casilla getPosicion() {
@@ -107,4 +108,6 @@ public class Estado {
     public String getMovimiento() {
         return movimiento;
     }
+
+    
 }
