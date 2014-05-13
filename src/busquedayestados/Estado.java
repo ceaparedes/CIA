@@ -91,6 +91,11 @@ public class Estado {
         return "se ha movido a la Posición= (" + posicion.x + "),(" + posicion.y + ") }" + movimiento ;
         
     }
+    
+    public void imprimirMatriz(Estado actual){
+        
+        
+    }
 
     public Casilla getPosicion() {
         Casilla position = new Casilla(posicion.x, posicion.y);

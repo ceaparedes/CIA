@@ -33,19 +33,20 @@ public class Busqueda {
             str.append("Paso ").append(contador + 1).append(", ")
                     .append(resultado.get(contador)).append("\n");
         }
-
         return str.toString();
     }
 
     public ArrayList iniciarBusqueda() {
         boolean termino = false;
         ArrayList<String> resultado;
+        ArrayList<Casilla> pos ;
         abierto.add(actual);
 
         while (!abierto.isEmpty() && !termino) {
             actual = abierto.get(0);
             if (!cerrado.contains(actual)) {
                 cerrado.add(actual);
+                
                 expandir(actual);
             }
             if (actual.getPosicion().equals(meta.getPosicion())) {
@@ -58,10 +59,12 @@ public class Busqueda {
         }
 
         resultado = new ArrayList<>();
+        pos = new ArrayList<>();
 
         while (actual.getAntecesor() != null) {
             resultado.add(0, actual.toString());
             actual = actual.getAntecesor();
+            pos = pos.add(actual.getPosicion());
         }
         return resultado;
     }
