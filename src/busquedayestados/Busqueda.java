@@ -64,8 +64,10 @@ public class Busqueda {
         while (actual.getAntecesor() != null) {
             resultado.add(0, actual.toString());
             actual = actual.getAntecesor();
-            pos = pos.add(actual.getPosicion());
+            pos.add(actual.getPosicion());
         }
+        
+        System.out.Println(pos.get(0).getPosicion().x);
         return resultado;
     }
 
